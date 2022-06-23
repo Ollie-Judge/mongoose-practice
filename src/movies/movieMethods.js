@@ -16,19 +16,3 @@ exports.listMovies = async () => {
     console.log(error);
   }
 };
-
-exports.updateMovies = async (movieObj) => {
-  try {
-    return await Movie.findOneAndUpdate(movieObj);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-exports.deleteMovies = async (movieObj) => {
-  try {
-    return await Movie.deleteOne(movieObj);
-  } catch (error) {
-    console.log(error);
-  }
-};

@@ -8,16 +8,9 @@ const movieSchema = new mongoose.Schema({
   },
   actor: {
     type: String,
-    required: false,
   },
   year: {
-    type: Number,
-    required: true,
-    required: false,
-  },
-  description: {
     type: String,
-    required: false,
   },
 });
 
