@@ -13,7 +13,7 @@ const app = async (yargsObj) => {
     } else if (yargsObj.deleteMovie) {
       // Call --deleteMovie in terminal
       await deleteMovie();
-      console.log("Previous movie has been deleted");
+      console.log(await listMovies());
     } else {
       console.log("Incorrect command");
     }

@@ -16,10 +16,13 @@ exports.listMovies = async () => {
     console.log(error);
   }
 };
+
 exports.deleteMovie = async (movieObj) => {
   try {
-    const response = await Movie.deleteOne(movieObj);
-    console.log(response);
+    await Movie.deleteOne(movieObj);
+    console.log(
+      "The last movie that was entered has been deleted, the movies remaining in the database are below"
+    );
   } catch (error) {
     console.log(error);
   }
