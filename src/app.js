@@ -1,7 +1,7 @@
 require("./db/connection");
 const mongoose = require("mongoose");
 const yargs = require("yargs");
-const { addMovie, listMovies } = require("./movies/movieMethods");
+const { addMovie, listMovies, deleteMovie } = require("./movies/movieMethods");
 
 const app = async (yargsObj) => {
   try {
@@ -10,6 +10,10 @@ const app = async (yargsObj) => {
       console.log(await listMovies());
     } else if (yargsObj.list) {
       console.log(await listMovies());
+    } else if (yargsObj.deleteMovie) {
+      // Call --deleteMovie in terminal
+      await deleteMovie();
+      console.log("Previous movie has been deleted");
     } else {
       console.log("Incorrect command");
     }
